@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-app.set('port', 8080);
+app.set('port', 80);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -29,5 +29,5 @@ app.post('/upload', upload.single('file'), (req, res) => {
 });
 
 app.listen(app.get('port'), () => {
-    console.log(`Server is listening on port ${process.env.PORT || 3000}`);
+    console.log(`Server is listening on port ${80}`);
 });
